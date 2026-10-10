@@ -10,7 +10,7 @@ export function HeroSection() {
       {/* Left column — flat on mobile/tablet (contents), real flex + justify-between on desktop */}
       <div className="contents lg:col-start-1 lg:flex lg:min-h-0 lg:flex-col lg:justify-between lg:py-2">
         {/* Bio — desktop only */}
-        <p className="hidden max-w-125 text-[13px] leading-snug text-[#1d1d1c] lg:order-1 lg:block lg:text-lg">
+        <p className="hidden max-w-lg text-sm text-[#1d1d1c] lg:order-1 lg:block lg:text-lg">
           A Computer Science Graduate specialized in Mobile Programming. I love
           to explore new technologies, learn new skills, and adapt to the
           fast-changing tech industry.
@@ -27,11 +27,11 @@ export function HeroSection() {
             <br />
             Developer
           </h1>
-          <div className="order-2 mt-2 flex flex-row items-baseline justify-between gap-4 md:mt-3 lg:order-1 lg:mb-1 lg:mt-0 lg:flex-col lg:items-start lg:gap-1">
-            <p className="order-1 text-[11px] font-bold uppercase tracking-[0.02em] md:text-[12px] lg:order-2 lg:text-[18px]">
+          <div className="order-2 mt-2 flex flex-row items-center justify-between gap-4 md:mt-3 lg:order-1 lg:mb-1 lg:mt-0 lg:flex-col lg:items-start lg:gap-1">
+            <p className="order-1 text-xs lg:text-lg font-semibold uppercase tracking-widest lg:order-2">
               Adrian M. De Guzman
             </p>
-            <p className="order-2 shrink-0 text-[8px] uppercase tracking-[0.06em] text-foreground/60 md:text-[10px] lg:order-1">
+            <p className="order-2 shrink-0 text-[10px] uppercase tracking-widest text-foreground/60 md:text-sm lg:order-1">
               Malabon City, Metro Manila
             </p>
           </div>
@@ -42,7 +42,7 @@ export function HeroSection() {
           <p className="max-w-60 md:max-w-sm text-xl leading-6 md:leading-8 md:text-3xl lg:text-3xl">
             Available for select collaborations and project development.
           </p>
-          <p className="mt-2 text-[9px] uppercase tracking-[0.08em] text-foreground/60 md:mt-3 md:text-[10px]">
+          <p className="mt-2 text-[9px] uppercase tracking-widest text-foreground/60 md:mt-3 md:text-[10px]">
             UI Systems · Web Development · AI Automation · Consultation
           </p>
           <div className="mt-3 flex flex-wrap gap-3 md:mt-4">
@@ -57,11 +57,11 @@ export function HeroSection() {
       </div>
 
       {/* Portrait — last on mobile/tablet, right column on desktop */}
-      <div className="order-3 mt-6 flex items-end justify-center md:mt-8 lg:col-start-2 lg:mt-0 lg:min-h-0 lg:justify-start">
-        <div className="relative aspect-square w-[94vw] md:w-[80vw] lg:h-full lg:max-h-full lg:w-full">
+      <div className="relative order-3 mt-6 flex items-end justify-center md:mt-8 lg:col-start-2 lg:mt-0 lg:min-h-0 lg:justify-start">
+        <div className="relative lg:absolute lg:-left-25 aspect-square w-[94vw] md:w-[80vw] lg:h-full lg:max-h-full lg:w-full">
           <div
             aria-hidden
-            className="absolute aspect-square inset-0 rounded-full bg-[#111110]"
+            className="absolute lg:top-0 lg:left-15 lg:h-[65vh] inset-0 aspect-square rounded-full bg-[#111110]"
           />
           <Image
             src="/hero.png"
@@ -69,7 +69,7 @@ export function HeroSection() {
             fill
             priority
             sizes="(max-width: 768px) 94vw, (max-width: 1024px) 80vw, 560px"
-            className="scale-[1.15] object-contain object-bottom"
+            className="scale-110 object-contain object-center"
           />
         </div>
       </div>
