@@ -3,7 +3,7 @@ import { navLinks } from "@/data/site";
 
 export function NavBar() {
   return (
-    <header className="flex h-[7dvh] shrink-0 items-center justify-between px-5 sm:px-8 md:px-10 lg:h-[8dvh] lg:px-10">
+    <header className="z-50 flex h-[7dvh] shrink-0 items-center justify-between px-5 sm:px-8 md:px-10 lg:h-[8dvh] lg:px-10">
       <a
         href="#"
         aria-label="ADG home"
