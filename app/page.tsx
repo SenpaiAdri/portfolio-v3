@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/hero/hero-section";
 import { ProjectSection } from "@/components/project/project-section";
+import { ContactSection } from "@/components/contact/contact-section";
 import { NavBar } from "@/components/navbar";
 
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
       <NavBar />
       <HeroSection />
       <ProjectSection />
-
+      <ContactSection />
     </main>
   );
 }
