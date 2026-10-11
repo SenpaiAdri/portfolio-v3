@@ -5,7 +5,7 @@ import { NavBar } from "@/components/navbar";
 
 export default function Home() {
   return (
-    <main className="flex min-h-dvh flex-col bg-background text-foreground overflow-x-clip">
+    <main className="flex min-h-screen flex-col bg-background text-foreground overflow-x-clip">
       <NavBar />
       <HeroSection />
       <ProjectSection />

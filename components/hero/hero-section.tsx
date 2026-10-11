@@ -6,9 +6,9 @@ export function HeroSection() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative mt-[-7dvh] flex min-h-dvh flex-col lg:mt-[-8dvh] lg:h-dvh lg:overflow-hidden"
+      className="relative mt-[-7vh] flex min-h-screen flex-col lg:mt-[-8vh] lg:h-screen lg:overflow-hidden"
     >
-      <div className="flex-1 grid min-h-0 lg:min-h-0 grid-cols-1 lg:grid-cols-[1fr_0.9fr] overflow-clip px-5 sm:px-8 md:px-10 pt-[calc(7dvh+1.25rem)] md:pt-[calc(7dvh+1.5rem)] lg:px-10 lg:pt-[calc(8dvh+1rem)] text-foreground">
+      <div className="flex-1 grid min-h-0 lg:min-h-0 grid-cols-1 lg:grid-cols-[1fr_0.9fr] overflow-clip px-5 sm:px-8 md:px-10 pt-[calc(7vh+1.25rem)] md:pt-[calc(7vh+1.5rem)] lg:px-10 lg:pt-[calc(8vh+1rem)] text-foreground">
         {/* Left column */}
         <div className="contents lg:col-start-1 lg:flex lg:min-h-0 lg:flex-col lg:justify-between lg:py-2">
           {/* Bio */}

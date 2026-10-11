@@ -1,12 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import {
-  socials,
-  socialOrder,
-  email,
-  previousPortfolios,
-} from "@/data/site";
+import { socials, socialOrder, email, previousPortfolios } from "@/data/site";
 
 export function ContactSection() {
   const year = 2026;
@@ -19,7 +14,7 @@ export function ContactSection() {
     <section
       id="contact"
       aria-labelledby="contact-name"
-      className="flex min-h-dvh flex-col bg-foreground px-5 pt-10 pb-4 text-[#E9E6DE] sm:px-8 md:px-10 lg:px-14"
+      className="flex min-h-screen flex-col bg-foreground px-5 pt-10 pb-4 text-[#E9E6DE] sm:px-8 md:px-10 lg:px-14"
     >
       <div className="flex flex-col items-center gap-6 text-center md:flex-row md:items-start md:justify-between md:text-left">
         <ul className="flex flex-col items-center gap-1 md:items-start">

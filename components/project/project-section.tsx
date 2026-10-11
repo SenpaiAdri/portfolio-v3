@@ -12,7 +12,7 @@ export function ProjectSection() {
     <section
       id="projects"
       aria-labelledby="projects-heading"
-      className="flex flex-col py-[25vh] bg-foreground text-background px-4"
+      className="flex flex-col py-[35vh] bg-foreground text-background px-4"
     >
       <h2 id="projects-heading" className="sr-only">
         Projects

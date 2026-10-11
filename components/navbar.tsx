@@ -9,7 +9,7 @@ export function NavBar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="relative z-50 flex h-[7dvh] shrink-0 items-center justify-between px-5 sm:px-8 md:px-10 lg:h-[8dvh] lg:px-10">
+    <header className="relative z-50 flex h-[7vh] shrink-0 items-center justify-between px-5 sm:px-8 md:px-10 lg:h-[8vh] lg:px-10">
       <Link
         href="/"
         aria-label="ADG home"
