@@ -11,11 +11,11 @@ export function Button({
   ...props
 }: PillLinkProps) {
   const base =
-    "inline-flex items-center gap-1 rounded-full px-5 py-2.5 text-[11px] font-semibold tracking-wide transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current";
+    "inline-flex items-center gap-1 rounded-full px-5 md:px-8 py-2.5 text-[10px] font-semibold tracking-wide transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current";
   const styles =
     variant === "solid"
-      ? "bg-[#151514] text-[#f0ece2] hover:bg-black"
-      : "border border-[#151514] hover:bg-[#151514] hover:text-[#f0ece2]";
+      ? "bg-foreground text-background hover:bg-foreground"
+      : "border border-foreground hover:bg-foreground hover:text-background";
 
   return (
     <a className={`${base} ${styles} ${className}`} {...props}>
