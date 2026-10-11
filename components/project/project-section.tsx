@@ -2,10 +2,11 @@
 
 import type { CSSProperties } from "react";
 import { useState } from "react";
+import Image from "next/image";
 import { projects } from "@/data/projects";
 
 export function ProjectSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <section
@@ -88,17 +89,21 @@ export function ProjectSection() {
                       </a>
                     )}
 
-                    {/* Images — placeholders until project.image is populated */}
-                    <div className="relative mt-6 flex flex-col md:flex-row gap-3 pb-1 sm:gap-4 w-full">
-                      {project.image.map((src) => (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img
+                    {/* Images */}
+                    <div className="mt-6 grid w-full grid-cols-1 gap-3 pb-1 sm:grid-cols-3 sm:gap-4">
+                      {project.image.slice(0, 3).map((src) => (
+                        <div
                           key={src}
-                          src={src}
-                          alt={`${project.title} preview`}
-                          className="rounded-2xl object-cover aspect-video w-full md:w-97/300"
-                          loading="lazy"
-                        />
+                          className="relative aspect-video w-full overflow-hidden rounded-2xl bg-background/10"
+                        >
+                          <Image
+                            src={src}
+                            alt={`${project.title} preview`}
+                            fill
+                            sizes="(max-width: 640px) 100vw, 33vw"
+                            className="object-cover"
+                          />
+                        </div>
                       ))}
                     </div>
                   </div>
