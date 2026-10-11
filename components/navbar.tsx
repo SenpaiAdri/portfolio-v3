@@ -20,7 +20,7 @@ export function NavBar() {
       </a>
       <nav
         aria-label="Primary"
-        className="hidden bg-[#1b1b1a] text-[#ede9df] rounded-full pl-5 pr-5 sm:pl-10 sm:pr-10 py-2.5 items-center gap-5 sm:gap-14 lg:flex"
+        className="hidden bg-foreground text-[#ede9df] rounded-full pl-5 pr-5 sm:pl-10 sm:pr-10 py-2.5 items-center gap-5 sm:gap-14 lg:flex"
       >
         {navLinks.map((link) => (
           <a
