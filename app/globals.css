@@ -21,6 +21,26 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: auto;
+  scrollbar-color: rgb(233 230 222 / 0.75 ) var(--foreground);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--foreground);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2e2e2e;
+  border-radius: 8px;
+  border: 2px solid var(--foreground);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a4a4a;
 }
 
 @media (prefers-reduced-motion: reduce) {
