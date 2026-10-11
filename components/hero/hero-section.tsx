@@ -13,9 +13,7 @@ export function HeroSection() {
         <div className="contents lg:col-start-1 lg:flex lg:min-h-0 lg:flex-col lg:justify-between lg:py-2">
           {/* Bio */}
           <p className="hidden max-w-lg text-sm lg:order-1 lg:block lg:text-lg">
-            A Computer Science Graduate specialized in Mobile Programming. I
-            love to explore new technologies, learn new skills, and adapt to the
-            fast-changing tech industry.
+            A Computer Science Graduate specialized in Mobile Programming, loves to explore new technologies, learn new skills, and adapt to the fast-changing tech industry.
           </p>
 
           {/* Title block */}
@@ -29,10 +27,10 @@ export function HeroSection() {
               Developer
             </h1>
             <div className="order-2 mt-2 flex flex-row items-center justify-between gap-4 md:mt-3 lg:order-1 lg:mb-1 lg:mt-0 lg:flex-col lg:items-start lg:gap-0">
-              <p className="order-1 text-xs lg:text-lg font-semibold uppercase tracking-widest lg:order-2">
+              <p className="order-1 shrink-0 text-[10px] md:text-lg font-semibold uppercase tracking-widest lg:order-2">
                 Adrian M. De Guzman
               </p>
-              <p className="order-2 shrink-0 text-[10px] md:text-sm uppercase tracking-widest text-foreground/50 lg:order-1">
+              <p className="order-2 lg:order-1 shrink-0 text-[10px] md:text-xs uppercase tracking-widest text-foreground/50">
                 Malabon City, Metro Manila
               </p>
             </div>
@@ -43,8 +41,8 @@ export function HeroSection() {
             <p className="max-w-60 md:max-w-sm text-xl leading-6 md:leading-8 md:text-3xl lg:text-3xl">
               Available for select collaborations and project development.
             </p>
-            <p className="mt-2 text-[9px] md:text-[10px] uppercase tracking-widest text-foreground/50 md:mt-3">
-              UI Systems · Web Development · AI Automation · Consultation
+            <p className="mt-2 text-[9px] md:text-xs uppercase tracking-widest text-foreground/50 md:mt-3">
+              UI Design · Web Development · AI Automation · Consultation
             </p>
             <div className="mt-3 flex flex-wrap gap-3 md:mt-4">
               <Button href="#" variant="solid">
