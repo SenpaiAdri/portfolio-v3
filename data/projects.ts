@@ -6,8 +6,6 @@ export interface Project {
   tech: string[];
   date: string;
   role: string;
-  /** Hover / active row background. Falls back to the site background. */
-  accent?: string;
 }
 
 export const projects: Project[] = [

@@ -31,7 +31,6 @@ export function ProjectSection() {
       <ul className="flex flex-col">
         {projects.map((project, i) => {
           const isOpen = openIndex === i;
-          const rowBg = project.accent ?? "var(--background)";
           return (
             <li
               key={project.title}
@@ -42,8 +41,7 @@ export function ProjectSection() {
                 type="button"
                 aria-expanded={isOpen}
                 onClick={() => setOpenIndex(isOpen ? null : i)}
-                style={{ "--row-bg": rowBg } as CSSProperties}
-                className={`grid w-full cursor-pointer grid-cols-[1fr_1.5fr_0.6fr] items-center px-1 py-1.5 text-left text-sm transition-colors duration-200 outline-none hover:bg-(--row-bg) hover:text-foreground focus-visible:bg-(--row-bg) focus-visible:text-foreground sm:grid-cols-[1fr_1fr_1fr] sm:text-[15px] `}
+                className={`grid w-full cursor-pointer grid-cols-[1fr_1.5fr_0.6fr] items-center px-1 py-1.5 text-left text-sm transition-colors duration-200 outline-none hover:bg-background hover:text-foreground focus-visible:bg-(--row-bg) focus-visible:text-foreground sm:grid-cols-[1fr_1fr_1fr] sm:text-[15px]`}
               >
                 <span className="truncate pr-2">{project.title}</span>
                 <span className="truncate text-center">{project.role}</span>
