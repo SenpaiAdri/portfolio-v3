@@ -20,17 +20,17 @@ export function HeroSection() {
           <div className="order-1 flex flex-col lg:order-3 lg:pb-6">
             <h1
               id="hero-title"
-              className="order-1 whitespace-nowrap font-black uppercase leading-[0.85] tracking-[-0.04em] text-[15vw] lg:text-[6.5vw] xl:text-[8vw] lg:order-2 lg:mt-2 lg:whitespace-normal"
+              className="order-1 whitespace-nowrap font-black uppercase leading-[0.85] tracking-[-0.04em] text-[15vw] lg:text-[6.5vw] xl:text-[8vw] lg:order-2 lg:whitespace-normal"
             >
               Full-stack
               <br />
               Developer
             </h1>
-            <div className="order-2 mt-2 flex flex-row items-center justify-between gap-4 md:mt-3 lg:order-1 lg:mb-1 lg:mt-0 lg:flex-col lg:items-start lg:gap-0">
-              <p className="order-1 shrink-0 text-[10px] md:text-lg font-semibold uppercase tracking-widest lg:order-2">
+            <div className="order-2 mt-2 flex flex-row items-center justify-between gap-4 md:mt-3 lg:order-1 lg:mt-0 lg:flex-col lg:items-start lg:gap-0">
+              <p className="order-1 shrink-0 text-[10px] md:text-xs lg:text-lg font-semibold uppercase tracking-widest lg:order-2 pl-1 lg:pl-2">
                 Adrian M. De Guzman
               </p>
-              <p className="order-2 lg:order-1 shrink-0 text-[10px] md:text-xs uppercase tracking-widest text-foreground/50">
+              <p className="order-2 lg:order-1 shrink-0 text-[10px] md:text-xs uppercase tracking-widest text-foreground/50 lg:pl-2">
                 Malabon City, Metro Manila
               </p>
             </div>
@@ -45,10 +45,10 @@ export function HeroSection() {
               UI Design · Web Development · AI Automation · Consultation
             </p>
             <div className="mt-3 flex flex-wrap gap-3 md:mt-4">
-              <Button href="#" variant="solid">
+              <Button href="#contact" variant="solid">
                 CONTACT ME <span aria-hidden>↗</span>
               </Button>
-              <Button href="#" variant="outline">
+              <Button href="#projects" variant="outline">
                 SEE PROJECTS <span aria-hidden>↗</span>
               </Button>
             </div>

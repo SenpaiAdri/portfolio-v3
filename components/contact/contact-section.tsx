@@ -1,17 +1,19 @@
+"use client";
+
 import Image from "next/image";
-import { socials } from "@/data/site";
-
-const socialOrder = ["Instagram", "Facebook", "LinkedIn", "GitHub"];
-
-const email = "eydriannn.business@gmail.com";
-
-const previousPortfolios = [
-  { label: "v0", href: "https://eydriannn-v0.vercel.app" },
-  { label: "v1", href: "https://eydriannn-v1.vercel.app" },
-];
+import {
+  socials,
+  socialOrder,
+  email,
+  previousPortfolios,
+} from "@/data/site";
 
 export function ContactSection() {
   const year = 2026;
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <section
@@ -86,12 +88,13 @@ export function ContactSection() {
           aria-label="Footer"
           className="order-3 flex flex-col items-center gap-1 text-sm font-light tracking-wide uppercase sm:text-base md:items-end md:justify-self-end md:text-right"
         >
-          <a
-            href="#"
-            className="transition-opacity hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE]"
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className="cursor-pointer transition-opacity hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE]"
           >
-            Home
-          </a>
+            HOME
+          </button>
           <a
             href="#projects"
             className="transition-opacity hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE]"
