@@ -38,7 +38,7 @@ export function NavBar() {
           </a>
         ))}
       </nav>
-      <button
+      {/* <button
         type="button"
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
@@ -46,7 +46,7 @@ export function NavBar() {
         className="rounded-sm p-2 text-2xl leading-none lg:hidden"
       >
         <span aria-hidden>{open ? "✕" : "☰"}</span>
-      </button>
+      </button> */}
 
       {open && (
         <nav
