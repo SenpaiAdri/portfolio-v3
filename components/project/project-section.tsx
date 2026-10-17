@@ -27,6 +27,9 @@ export function ProjectSection() {
   const [preview, setPreview] = useState<Preview | null>(null);
   const pushedRef = useRef(false);
   const listRef = useRef<HTMLUListElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  // The thumbnail button to return focus to when the viewer closes.
+  const openerRef = useRef<HTMLElement | null>(null);
   // Pending "scroll the freshly opened row into view" (small screens only).
   const openScrollTimer = useRef<number | null>(null);
   const isPreviewOpen = preview !== null;
@@ -47,6 +50,7 @@ export function ProjectSection() {
     document.body.style.overflow = "hidden";
     window.history.pushState({ lightbox: true }, "");
     pushedRef.current = true;
+    dialogRef.current?.focus();
 
     const handlePopState = () => {
       pushedRef.current = false;
@@ -57,6 +61,10 @@ export function ProjectSection() {
       if (e.key === "Escape") {
         e.preventDefault();
         closePreview();
+      } else if (e.key === "Tab") {
+        // The viewer holds one focusable element, so keep focus there instead
+        // of letting Tab walk the page behind the overlay.
+        e.preventDefault();
       }
     };
 
@@ -67,6 +75,8 @@ export function ProjectSection() {
       document.body.style.overflow = "";
       window.removeEventListener("popstate", handlePopState);
       window.removeEventListener("keydown", handleKeyDown);
+      openerRef.current?.focus();
+      openerRef.current = null;
     };
   }, [isPreviewOpen, closePreview]);
 
@@ -266,9 +276,10 @@ export function ProjectSection() {
                         <button
                           key={src}
                           type="button"
-                          onClick={() =>
-                            setPreview({ src, title: project.title })
-                          }
+                          onClick={(e) => {
+                            openerRef.current = e.currentTarget;
+                            setPreview({ src, title: project.title });
+                          }}
                           aria-label={`View ${project.title} image fullscreen`}
                           className="group relative aspect-video w-full cursor-zoom-in overflow-hidden rounded-2xl bg-background/10 outline-none focus-visible:ring-2 focus-visible:ring-background focus-visible:ring-offset-2 focus-visible:ring-offset-foreground"
                         >
@@ -299,11 +310,13 @@ export function ProjectSection() {
       {/* Fullscreen image viewer */}
       {preview && (
         <div
+          ref={dialogRef}
           role="dialog"
           aria-modal="true"
+          tabIndex={-1}
           aria-label={`${preview.title} image viewer. Press Escape, browser back, or click anywhere to close.`}
           onClick={closePreview}
-          className="fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-black/85 p-4 backdrop-blur-sm sm:p-8"
+          className="fixed inset-0 z-50 flex cursor-zoom-out items-center justify-center bg-black/85 p-4 outline-none backdrop-blur-sm sm:p-8"
         >
           <img
             src={preview.src}
