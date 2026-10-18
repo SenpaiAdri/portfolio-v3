@@ -45,6 +45,18 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
+  }
+
+  /* Same for the project-row hover wipe. */
+  [data-wipe] {
+    transition: none;
+  }
+}
+
+/* The project reveal is driven by JS; without JS, keep the text in place. */
+@media (scripting: none) {
+  .reveal-text {
+    translate: none;
   }
 }

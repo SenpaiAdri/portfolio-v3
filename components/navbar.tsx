@@ -1,13 +1,8 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { navLinks } from "@/data/site";
 
 export function NavBar() {
-  const [open, setOpen] = useState(false);
-
   return (
     <header className="relative z-50 flex h-[7vh] shrink-0 items-center justify-between px-5 sm:px-8 md:px-10 lg:h-[8vh] lg:px-10">
       <Link
@@ -38,33 +33,6 @@ export function NavBar() {
           </a>
         ))}
       </nav>
-      {/* <button
-        type="button"
-        aria-label={open ? "Close menu" : "Open menu"}
-        aria-expanded={open}
-        onClick={() => setOpen((v) => !v)}
-        className="rounded-sm p-2 text-2xl leading-none lg:hidden"
-      >
-        <span aria-hidden>{open ? "✕" : "☰"}</span>
-      </button> */}
-
-      {open && (
-        <nav
-          aria-label="Mobile"
-          className="absolute inset-x-5 top-full flex flex-col items-center gap-4 rounded-2xl bg-foreground px-6 py-5 text-[#ede9df] sm:inset-x-8 md:inset-x-10 lg:hidden"
-        >
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="text-sm font-medium tracking-wide hover:opacity-60 transition-opacity focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ede9df]"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-      )}
     </header>
   );
 }

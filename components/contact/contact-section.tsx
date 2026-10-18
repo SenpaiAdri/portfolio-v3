@@ -1,13 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { socials, socialOrder, email, previousPortfolios } from "@/data/site";
+import { socials, email, previousPortfolios } from "@/data/site";
 
-export function ContactSection() {
-  const year = 2026;
-
+export function ContactSection({ year }: { year: number }) {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0 });
   };
 
   return (
@@ -18,15 +16,15 @@ export function ContactSection() {
     >
       <div className="flex flex-col items-center gap-6 text-center md:flex-row md:items-start md:justify-between md:text-left">
         <ul className="flex flex-col items-center gap-1 md:items-start">
-          {socialOrder.map((name) => (
-            <li key={name}>
+          {socials.map(({ label, href }) => (
+            <li key={label}>
               <a
-                href={socials[name] ?? "#"}
+                href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-2xl font-extrabold tracking-tight uppercase leading-[1.15] transition-opacity hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE] sm:text-3xl lg:text-[2rem]"
               >
-                {name} <span aria-hidden>↗</span>
+                {label} <span aria-hidden>↗</span>
               </a>
             </li>
           ))}

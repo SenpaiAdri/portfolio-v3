@@ -1,7 +1,7 @@
 export interface Project {
   title: string;
   description: string;
-  link: string | undefined;
+  link?: string;
   image: string[];
   tech: string[];
   date: string;
@@ -13,12 +13,10 @@ export const projects: Project[] = [
     title: "Pasada",
     description:
       "Designed and implemented the driver app for the Pasada Ecosystem. Designed the centralized PostgreSQL database schema in Supabase for the entire platform. Implemented real-time location tracking using the Google Maps API.",
-    link: undefined,
     image: [
       "/projects/pasada/activity.webp",
       "/projects/pasada/dropoff.webp",
       "/projects/pasada/manual-booking.webp",
-      "/projects/pasada/home.webp",
     ],
     tech: ["Flutter", "Dart", "Google Maps API", "Supabase", "PostgreSQL"],
     date: "2025",

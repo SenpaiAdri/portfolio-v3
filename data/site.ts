@@ -1,20 +1,14 @@
-interface Socials {
-  [key: string]: string;
-}
-
 export const navLinks = [
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
 
-export const socials: Socials = {
-  "LinkedIn": "https://www.linkedin.com/in/eydriannn/",
-  "GitHub": "https://github.com/SenpaiAdri",
-  "Facebook": "https://www.facebook.com/eydriannnnnn",
-  "Instagram": "https://www.instagram.com/_eydriannn/",
-};
-
-export const socialOrder = ["Instagram", "Facebook", "LinkedIn", "GitHub"];
+export const socials = [
+  { label: "Instagram", href: "https://www.instagram.com/_eydriannn/" },
+  { label: "Facebook", href: "https://www.facebook.com/eydriannnnnn" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/eydriannn/" },
+  { label: "GitHub", href: "https://github.com/SenpaiAdri" },
+];
 
 export const email = "eydriannn.business@gmail.com";
 

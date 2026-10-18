@@ -20,7 +20,7 @@ interface Preview {
 // the row's --stagger cascade offset (text starts 110% down behind an
 // overflow-hidden mask).
 const textRevealClass =
-  "block translate-y-[110%] transition-transform duration-[600ms] ease-[cubic-bezier(0.33,1,0.68,1)] delay-[calc(var(--stagger,0ms)+var(--i)*100ms)] motion-reduce:transition-none group-data-[inview=true]/reveal:translate-y-0";
+  "reveal-text block translate-y-[110%] transition-transform duration-[600ms] ease-[cubic-bezier(0.33,1,0.68,1)] delay-[calc(var(--stagger,0ms)+var(--i)*100ms)] motion-reduce:transition-none group-data-[inview=true]/reveal:translate-y-0";
 
 export function ProjectSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -164,7 +164,7 @@ export function ProjectSection() {
     if (!row) return;
     openScrollTimer.current = window.setTimeout(() => {
       const top = row.getBoundingClientRect().top + window.scrollY - 72;
-      window.scrollTo({ top, behavior: "smooth" });
+      window.scrollTo({ top });
     }, 500);
   };
 
@@ -263,8 +263,7 @@ export function ProjectSection() {
                         href={project.link}
                         target="_blank"
                         rel="noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="mt-4 inline-flex items-center gap-1 rounded-full bg-background/50 px-3.5 py-1.5 text-[11px] font-medium text-foreground transition-opacity hover:opacity-80"
+                        className="mt-4 inline-flex items-center gap-1 rounded-full bg-background px-3.5 py-1.5 text-[11px] font-medium text-foreground transition-opacity hover:opacity-75"
                       >
                         Visit website <span aria-hidden>↗</span>
                       </a>
