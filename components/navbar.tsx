@@ -28,7 +28,7 @@ export function NavBar() {
           <a
             key={link.label}
             href={link.href}
-            className="group/roll text-[10px] sm:text-[11px] font-medium tracking-widest transition-opacity rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ede9df] uppercase"
+            className="group/roll text-[10px] sm:text-[11px] font-medium tracking-widest transition-opacity focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ede9df] uppercase"
           >
             <RollingText text={link.label} />
           </a>
