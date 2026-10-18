@@ -114,7 +114,7 @@ export function ProjectSection() {
         }
       },
       // Fire when a row has mostly entered the viewport so the reveal is visible.
-      { rootMargin: "0px 0px -10% 0px" }
+      { rootMargin: "0px 0px -10% 0px" },
     );
 
     // Only project rows — not the tech <li>s nested inside expanded content.
@@ -172,7 +172,7 @@ export function ProjectSection() {
     <section
       id="projects"
       aria-labelledby="projects-heading"
-      className="flex flex-col py-[35vh] bg-foreground text-background px-4"
+      className="flex flex-col py-[30vh] bg-foreground text-background px-4"
     >
       <h2 id="projects-heading" className="sr-only">
         Projects
@@ -181,7 +181,7 @@ export function ProjectSection() {
       {/* Column labels */}
       <div
         aria-hidden
-        className="grid grid-cols-[1fr_1.5fr_0.6fr] items-end px-1 pb-1 text-xs uppercase tracking-[0.15em] text-background/75 sm:grid-cols-[1fr_1fr_1fr]"
+        className="grid grid-cols-[1fr_1.5fr_0.6fr] items-end px-1 text-[12px] uppercase tracking-[0.15em] text-background/75 sm:grid-cols-[1fr_1fr_1fr]"
       >
         <span>Project</span>
         <span className="text-center">Role</span>
@@ -197,7 +197,7 @@ export function ProjectSection() {
               {/* Bottom stroke — draws left-to-right once the row's text has landed */}
               <span
                 aria-hidden
-                className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-px origin-left scale-x-0 bg-background/50 transition-transform delay-[calc(var(--stagger,0ms)+300ms)] duration-1500 ease-[cubic-bezier(0.33,1,0.68,1)] motion-reduce:transition-none group-data-[inview=true]/reveal:scale-x-100"
+                className="pointer-events-none absolute inset-x-0 bottom-0 z-10 origin-left scale-x-0 border-b border-background/50 transition-transform delay-[calc(var(--stagger,0ms)+300ms)] duration-1500 ease-[cubic-bezier(0.33,1,0.68,1)] motion-reduce:transition-none group-data-[inview=true]/reveal:scale-x-100"
               />
               {/* Row header */}
               <button
@@ -212,20 +212,29 @@ export function ProjectSection() {
                 <span
                   aria-hidden
                   data-wipe
-                  className="absolute inset-0 z-0 translate-y-[var(--from,calc(-100%_-_1px))] bg-background data-[wipe=in]:translate-y-0 data-[wipe=in]:transition-transform data-[wipe=in]:duration-250 data-[wipe=in]:ease-[cubic-bezier(0.33,1,0.68,1)] data-[wipe=out]:transition-transform data-[wipe=out]:duration-250 data-[wipe=out]:ease-[cubic-bezier(0.33,1,0.68,1)]"
+                  className="absolute inset-0 z-0 translate-y-(--from,calc(-100%-1px)) bg-background data-[wipe=in]:translate-y-0 data-[wipe=in]:transition-transform data-[wipe=in]:duration-250 data-[wipe=in]:ease-[cubic-bezier(0.33,1,0.68,1)] data-[wipe=out]:transition-transform data-[wipe=out]:duration-250 data-[wipe=out]:ease-[cubic-bezier(0.33,1,0.68,1)]"
                 />
                 <span className="relative z-10 overflow-hidden pr-2 transition-[color,padding] duration-300 group-hover/row:pl-3.5 group-hover/row:text-foreground">
-                  <span className={`truncate ${textRevealClass}`} style={{ "--i": 0 } as CSSProperties}>
+                  <span
+                    className={`truncate ${textRevealClass}`}
+                    style={{ "--i": 0 } as CSSProperties}
+                  >
                     {project.title}
                   </span>
                 </span>
                 <span className="relative z-10 overflow-hidden text-center transition-[color,padding] duration-300 group-hover/row:text-foreground">
-                  <span className={`truncate ${textRevealClass}`} style={{ "--i": 1 } as CSSProperties}>
+                  <span
+                    className={`truncate ${textRevealClass}`}
+                    style={{ "--i": 1 } as CSSProperties}
+                  >
                     {project.role}
                   </span>
                 </span>
                 <span className="relative z-10 overflow-hidden text-right transition-[color,padding] duration-300 group-hover/row:pr-3.5 group-hover/row:text-foreground">
-                  <span className={`tabular-nums ${textRevealClass}`} style={{ "--i": 2 } as CSSProperties}>
+                  <span
+                    className={`tabular-nums ${textRevealClass}`}
+                    style={{ "--i": 2 } as CSSProperties}
+                  >
                     {project.date}
                   </span>
                 </span>
