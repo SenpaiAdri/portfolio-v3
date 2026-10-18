@@ -88,13 +88,13 @@ export function ContactSection({ year }: { year: number }) {
           <button
             type="button"
             onClick={scrollToTop}
-            className="group/roll cursor-pointer transition-opacity focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE]"
+            className="group/roll cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE]"
           >
             <RollingText text="HOME" />
           </button>
           <a
             href="#projects"
-            className="group/roll transition-opacity focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE]"
+            className="group/roll focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE]"
           >
             <RollingText text="Projects" />
           </a>
