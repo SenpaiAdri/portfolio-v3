@@ -25,7 +25,7 @@ export const projects: Project[] = [
   {
     title: "AI-Blogpost",
     description:
-      "Built an autonomous AI blogging platform that ingests content from 25+ RSS feeds, processes AI and software engineering news, and generates and publishes articles through an automated content pipeline with no manual publishing required.",
+      "Built an autonomous AI blogging platform that ingests content from 25+ RSS feeds and automatically generates and publishes news articles.",
     link: "https://ai-blogpost.vercel.app/",
     image: [
       "/projects/ai-blogpost/about.webp",
