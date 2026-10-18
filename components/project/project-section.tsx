@@ -250,7 +250,7 @@ export function ProjectSection() {
               >
                 <div className="overflow-hidden">
                   <div className="pt-5 pb-20">
-                    <p className="max-w-3xl text-xl leading-tight font-normal text-balance sm:text-2xl md:text-[2rem]">
+                    <p className="max-w-4xl text-xl leading-tight font-normal text-balance sm:text-2xl md:text-[2rem]">
                       {project.description}
                     </p>
 
