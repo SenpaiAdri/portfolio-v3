@@ -25,7 +25,7 @@ export const projects: Project[] = [
   {
     title: "AI-Blogpost",
     description:
-      "Developed an autonomous blog posting platform without human intervention. ",
+      "Built an autonomous AI blogging platform that ingests content from 25+ RSS feeds, processes AI and software engineering news, and generates and publishes articles through an automated content pipeline with no manual publishing required.",
     link: "https://ai-blogpost.vercel.app/",
     image: [
       "/projects/ai-blogpost/about.webp",
@@ -55,14 +55,14 @@ export const projects: Project[] = [
       "/projects/lootbx/landing-1.webp",
       "/projects/lootbx/landing-2.webp",
     ],
-    tech: ["React", "Golang", "Socket.io", "MongoDB"],
+    tech: ["React.js", "Golang", "Socket.io", "MongoDB"],
     date: "2026",
     role: "Intern Full-Stack Developer",
   },
   {
     title: "Unique Co",
     description:
-      "Designed and developed a website for a local bouquet and gift shop. Applied SEO best practices to improve search engine visibility.",
+      "Designed and developed a website for a local bouquet and gift shop. Applied SEO best practices to improve search engine discoverability and help the business grow.",
     link: "https://unique-co.pages.dev/",
     image: [
       "/projects/unique-co/about.webp",
