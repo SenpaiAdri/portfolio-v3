@@ -61,6 +61,11 @@ html {
   transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
+/* Nudge the bar below the text box, where text-underline-offset would sit. */
+.link-underline-offset::after {
+  bottom: -4px;
+}
+
 .link-underline:hover::after {
   transform: scaleX(1);
 }
