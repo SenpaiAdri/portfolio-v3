@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { navLinks } from "@/data/site";
+import { RollingText } from "@/components/ui/rolling-text";
 
 export function NavBar() {
   return (
@@ -27,9 +28,9 @@ export function NavBar() {
           <a
             key={link.label}
             href={link.href}
-            className="text-[10px] sm:text-[11px] font-medium tracking-widest hover:opacity-60 transition-opacity rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ede9df] uppercase"
+            className="group/roll text-[10px] sm:text-[11px] font-medium tracking-widest transition-opacity rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ede9df] uppercase"
           >
-            {link.label}
+            <RollingText text={link.label} />
           </a>
         ))}
       </nav>

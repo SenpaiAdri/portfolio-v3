@@ -1,38 +1,8 @@
 "use client";
 
-import type { CSSProperties } from "react";
 import Image from "next/image";
 import { socials, email, previousPortfolios } from "@/data/site";
-
-// Social label characters: on hover each one rolls down one line so the
-// identical copy hidden above slides in, staggered per character via --i.
-// The trailing ↗ arrow uses RollingChar too so it rolls in the same cadence.
-function RollingChar({ char, index }: { char: string; index: number }) {
-  const glyph = char === " " ? "\u00A0" : char;
-  return (
-    <span className="relative inline-block [clip-path:inset(0)]">
-      <span
-        className="block transition-transform duration-300 ease-[cubic-bezier(0.33,1,0.68,1)] delay-[calc(var(--i)*25ms)] motion-reduce:transition-none group-hover/social:translate-y-full"
-        style={{ "--i": index } as CSSProperties}
-      >
-        <span aria-hidden className="absolute inset-x-0 bottom-full">
-          {glyph}
-        </span>
-        <span className="block">{glyph}</span>
-      </span>
-    </span>
-  );
-}
-
-function RollingText({ text }: { text: string }) {
-  return (
-    <>
-      {text.split("").map((char, i) => (
-        <RollingChar key={i} char={char} index={i} />
-      ))}
-    </>
-  );
-}
+import { RollingChar, RollingText } from "@/components/ui/rolling-text";
 
 export function ContactSection({ year }: { year: number }) {
   const scrollToTop = () => {
@@ -53,7 +23,7 @@ export function ContactSection({ year }: { year: number }) {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/social text-2xl font-extrabold tracking-tight uppercase leading-[1.15] transition-opacity focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE] sm:text-3xl lg:text-[2rem]"
+                className="group/roll text-2xl font-extrabold tracking-tight uppercase leading-[1.15] transition-opacity focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE] sm:text-3xl lg:text-[2rem]"
               >
                 <RollingText text={label} />{" "}
                 <span aria-hidden>
