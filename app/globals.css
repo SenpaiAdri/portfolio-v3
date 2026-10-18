@@ -43,6 +43,28 @@ html {
   background: #4a4a4a;
 }
 
+/* Footer links: underline grows left-to-right on hover. */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -50,6 +72,10 @@ html {
 
   /* Same for the project-row hover wipe. */
   [data-wipe] {
+    transition: none;
+  }
+
+  .link-underline::after {
     transition: none;
   }
 }

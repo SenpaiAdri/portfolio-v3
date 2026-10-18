@@ -22,7 +22,7 @@ export function ContactSection({ year }: { year: number }) {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-2xl font-extrabold tracking-tight uppercase leading-[1.15] transition-opacity hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE] sm:text-3xl lg:text-[2rem]"
+                className="link-underline text-2xl font-extrabold tracking-tight uppercase leading-[1.15] transition-opacity hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE] sm:text-3xl lg:text-[2rem]"
               >
                 {label} <span aria-hidden>↗</span>
               </a>
@@ -33,7 +33,7 @@ export function ContactSection({ year }: { year: number }) {
         <div className="flex flex-col items-center gap-0.5 text-base leading-snug font-light sm:text-lg md:items-end md:text-right lg:text-2xl">
           <a
             href={`mailto:${email}`}
-            className="transition-opacity hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE]"
+            className="link-underline transition-opacity hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE]"
           >
             {email}
           </a>
@@ -58,7 +58,7 @@ export function ContactSection({ year }: { year: number }) {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-opacity hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE]"
+                  className="link-underline transition-opacity hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE]"
                 >
                   {item.label} <span aria-hidden>↗</span>
                 </a>
@@ -84,13 +84,13 @@ export function ContactSection({ year }: { year: number }) {
           <button
             type="button"
             onClick={scrollToTop}
-            className="cursor-pointer transition-opacity hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE]"
+            className="link-underline cursor-pointer transition-opacity hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE]"
           >
             HOME
           </button>
           <a
             href="#projects"
-            className="transition-opacity hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE]"
+            className="link-underline transition-opacity hover:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#E9E6DE]"
           >
             Projects
           </a>
