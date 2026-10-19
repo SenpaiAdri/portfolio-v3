@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { RollingChar, RollingText } from "@/components/ui/rolling-text";
 import { SocialBar } from "@/components/hero/bottom-links";
 
 export function HeroSection() {
@@ -45,11 +46,21 @@ export function HeroSection() {
               UI Design · Web Development · AI Automation · Consultation
             </p>
             <div className="mt-3 flex flex-wrap gap-3 md:mt-4">
-              <Button href="#contact" variant="solid">
-                CONTACT ME <span aria-hidden>↗</span>
+              <Button href="#contact" variant="solid" className="group/roll">
+                <span>
+                  <RollingText text="CONTACT ME" />
+                </span>
+                <span aria-hidden>
+                  <RollingChar char="↗" index={10} />
+                </span>
               </Button>
-              <Button href="#projects" variant="outline">
-                SEE PROJECTS <span aria-hidden>↗</span>
+              <Button href="#projects" variant="outline" className="group/roll">
+                <span>
+                  <RollingText text="SEE PROJECTS" />
+                </span>
+                <span aria-hidden>
+                  <RollingChar char="↗" index={12} />
+                </span>
               </Button>
             </div>
           </div>

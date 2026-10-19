@@ -15,7 +15,7 @@ export function Button({
   const styles =
     variant === "solid"
       ? "bg-foreground text-background"
-      : "border border-foreground hover:bg-foreground hover:text-background";
+      : "border border-foreground duration-300 ease-[cubic-bezier(0.33,1,0.68,1)] hover:bg-foreground hover:text-background";
 
   return (
     <a className={`${base} ${styles} ${className}`} {...props}>
