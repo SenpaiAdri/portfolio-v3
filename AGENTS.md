@@ -1,28 +1,39 @@
-# Portfolio v3 — agent notes
+# Portfolio v3 — agent guidance
 
 Single-page portfolio site: Next.js 16 (App Router), React 19, Tailwind v4. Content is entirely data-driven; no database, no backend.
 
-## Verify
+## Commands
 
-- `npm run lint` — eslint-config-next, the only automated check.
-- `npm run build` — includes the TypeScript typecheck; use when type errors matter.
-- No tests, no CI, no typecheck script. Focused type check: `npx tsc --noEmit`.
+Run commands from the repository root:
+
+- `npm run dev` — start the local development server.
+- `npm run lint` — run ESLint.
+- `npx tsc --noEmit` — run the TypeScript check; there is no npm script for it.
+- `npm run build` — production build and an additional type-checking signal.
+- There are no automated tests or repository CI workflows.
 
 ## Framework quirks
 
-- `cacheComponents: true` is set — anything call-time-computed that must be stable at build time (e.g. `new Date()`) needs `"use cache"`; see `getCopyrightYear` in `app/page.tsx`.
+- `cacheComponents: true` and `partialPrefetching: true` are enabled in `next.config.ts`.
+- With Cache Components enabled, call-time-computed values that must be stable at build time (for example `new Date()`) need `"use cache"`; see `getCopyrightYear` in `app/page.tsx`.
 - Tailwind runs through Turbopack (`turbopack.rules` in `next.config.ts`), not postcss.config. There is no tailwind.config; theme tokens (`--background`/`--foreground` → `bg-background`/`text-foreground`) are defined via `@theme inline` in `app/globals.css`.
+- `experimental.agentFeedback` is enabled. Preserve the generated Next.js agent blocks in this file and follow any reporting instructions before finishing work.
 
 ## Structure
 
 - Path alias `@/*` → repo root.
 - `app/page.tsx` composes sections from `components/{hero,project,contact}/` plus `components/navbar.tsx`.
-- All content lives in `data/`: `site.ts` (nav links, socials, email, previous portfolios) and `projects.ts` (the project list; images in `public/projects/<project>/*.webp` referenced by path). For content changes edit data files, not section components.
-- Site copy and SEO metadata (title, description, OG/Twitter cards) live in `app/layout.tsx`.
+- `components/project/project-section.tsx` is a client component: it owns project accordion state, IntersectionObserver reveals, hover wipes, focus restoration, and the fullscreen image viewer.
+- All portfolio content lives in `data/`: `site.ts` (navigation, social links, email, previous portfolios) and `projects.ts` (typed project list). For content changes edit these data files, not section components.
+- Project images live in `public/projects/<project>/*.webp` and are referenced by absolute public paths in `data/projects.ts`.
+- Site copy and SEO metadata (title, description, canonical URL, Open Graph/Twitter cards, robots, and viewport theme color) live in `app/layout.tsx`.
 
 ## Conventions
 
 - Accessibility matters here: keep the `prefers-reduced-motion` and `@media (scripting: none)` fallbacks in `globals.css` working for any new JS-driven UI, and match the existing focus-management/aria-label patterns in interactive components.
+- Prefer semantic sections, headings, buttons, and links. Preserve keyboard access, `aria-expanded`/`aria-controls` relationships, focus restoration, and reduced-motion behavior when changing interactive project UI.
+- Use `next/image` for local images and preserve meaningful alt text. External project links opened in a new tab must retain `rel="noreferrer"`.
+- Keep styling consistent with the CSS theme tokens and the existing warm light palette; do not introduce a Tailwind config or a second styling system without an explicit architectural reason.
 
 <!-- BEGIN:nextjs-agent-rules -->
 
